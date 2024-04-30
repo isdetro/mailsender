@@ -1,0 +1,7 @@
+DB_HOST: localhost:1433
+DB_NAME: mail_service
+DB_PASSWORD: root1997
+DB_USERNAME: sa
+FILE_SERVICE_BASE_URL: ""
+
+ACTIVE_PROFILE: prod

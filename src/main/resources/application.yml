@@ -1,0 +1,53 @@
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+  datasource:
+    url: jdbc:sqlserver://${DB_HOST};databaseName=${DB_NAME};encrypt=true;trustServerCertificate=true;
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+        globally_quoted_identifiers: true
+        format_sql: true
+  mail:
+    host: ${EMAIL_HOSTl}
+    port: ${EMAIL_PORT}
+    username: ${EMAIL_ID}
+    password: ${EMAIL_PASSWORD}
+    default-encoding: UTF-8
+    properties:
+      mail:
+        mime:
+          charset: UTF
+        smtp:
+          timeout: 10000
+          writetimeout: 10000
+          connectiontimeout: 10000
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    verify:
+      host: ${VERIFY_EMAIL_HOST}
+
+
+server:
+  port: ${SERVER_PORT:9000}
+
+
+#Email Config
+EMAIL_HOSTl: smtp.gmail.com
+EMAIL_PORT: 587
+EMAIL_ID: suniversitymanagement@gmail.com
+EMAIL_PASSWORD: wjnqmmiufspisyjq
+VERIFY_EMAIL_HOST: http://localhost:${SERVER_PORT:9000}
+
+
