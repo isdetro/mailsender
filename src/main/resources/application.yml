@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    active: ${ACTIVE_PROFILE:dev}
   datasource:
     url: jdbc:sqlserver://${DB_HOST};databaseName=${DB_NAME};encrypt=true;trustServerCertificate=true;
     username: ${DB_USERNAME}
@@ -47,7 +45,7 @@ server:
 EMAIL_HOSTl: smtp.gmail.com
 EMAIL_PORT: 587
 EMAIL_ID: suniversitymanagement@gmail.com
-EMAIL_PASSWORD:
+EMAIL_PASSWORD: wjnqmmiufspisyjq
 VERIFY_EMAIL_HOST: http://localhost:${SERVER_PORT:9000}
 
 

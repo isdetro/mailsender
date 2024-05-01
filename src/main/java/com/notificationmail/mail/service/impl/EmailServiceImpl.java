@@ -3,7 +3,6 @@ package com.notificationmail.mail.service.impl;
 import com.notificationmail.mail.service.EmailService;
 import com.notificationmail.mail.utils.EmailUtils;
 import jakarta.mail.internet.MimeMessage;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
@@ -20,7 +19,6 @@ import java.util.Map;
 import static com.notificationmail.mail.utils.EmailUtils.getVerificationUrl;
 
 @Service
-@RequiredArgsConstructor
 public class EmailServiceImpl implements EmailService {
 
     public static final String NEW_USER_ACCOUNT_VERIFICATION = "New User Account Verification";
@@ -36,6 +34,10 @@ public class EmailServiceImpl implements EmailService {
     private final JavaMailSender emailSender;
     private final TemplateEngine templateEngine;
 
+    public EmailServiceImpl(JavaMailSender emailSender, TemplateEngine templateEngine) {
+        this.emailSender = emailSender;
+        this.templateEngine = templateEngine;
+    }
 
     @Override
     @Async
